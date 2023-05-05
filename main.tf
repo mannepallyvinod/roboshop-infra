@@ -1,5 +1,5 @@
 module "vpc" {
-  source                = "git::https://github.com/sriharitirumala/tf-module-vpc.git"
+  source                = "git::https://github.com/mannepallyvinod/tf-module-vpc.git"
   env                   = var.env
   tags                  = var.tags
   default_route_table   = var.default_route_table
@@ -12,7 +12,7 @@ module "vpc" {
 }
 
 module "docdb" {
- source                          = "git::https://github.com/sriharitirumala/tf-module-docdb.git"
+ source                          = "git::https://github.com/mannepallyvinod/tf-module-docdb.git"
  env                             = var.env
  tags                            = var.tags
 
@@ -31,7 +31,7 @@ module "docdb" {
 }
 
 module "rds" {
- source                          = "git::https://github.com/sriharitirumala/tf-module-rds.git"
+ source                          = "git::https://github.com/mannepallyvinod/tf-module-rds.git"
  env                             = var.env
  tags                            = var.tags
 
@@ -50,7 +50,7 @@ module "rds" {
 
 
 module "elasticache" {
- source                          = "git::https://github.com/sriharitirumala/tf-module-elasticache.git"
+ source                          = "git::https://github.com/mannepallyvinod/tf-module-elasticache.git"
  env                             = var.env
  tags                            = var.tags
 
@@ -67,7 +67,7 @@ module "elasticache" {
 
 module "rabbitmq" {
  depends_on    = [module.vpc]
- source        = "git::https://github.com/sriharitirumala/tf-module-rabbitmq.git"
+ source        = "git::https://github.com/mannepallyvinod/tf-module-rabbitmq.git"
  env           = var.env
  tags          = var.tags
  bastion_cidr  = var.bastion_cidr
@@ -84,7 +84,7 @@ module "rabbitmq" {
 
 
 module "alb" {
- source = "git::https://github.com/sriharitirumala/tf-module-alb.git"
+ source = "git::https://github.com/mannepallyvinod/tf-module-alb.git"
  env    = var.env
  tags   = var.tags
 
@@ -103,7 +103,7 @@ module "alb" {
 module "app" {
 
  depends_on = [module.vpc, module.docdb, module.rds, module.elasticache, module.alb, module.rabbitmq]
- source = "git::https://github.com/sriharitirumala/tf-module-app.git"
+ source = "git::https://github.com/mannepallyvinod/tf-module-app.git"
  env    = var.env
  tags   = var.tags
  bastion_cidr = var.bastion_cidr
