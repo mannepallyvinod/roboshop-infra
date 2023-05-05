@@ -5,5 +5,5 @@ tags ={
   cost_centre = 1001
 }
 
-default_vpc_id = "vpc-0559526174e73c9c6"
-default_route_table = "rtb-0ce56a25f125c65aa"
+default_vpc_id = "vpc-0371e02ee710e5518"
+default_route_table = "rtb-02b98c78d091a82d8"

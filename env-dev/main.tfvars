@@ -1,7 +1,7 @@
 env = "dev"
-bastion_cidr = ["172.31.1.186/32"]
-monitoring_nodes = ["172.31.13.185/32"]
-dns_domain = "devopsb71services.site"
+bastion_cidr = ["172.31.95.162/32"]
+#monitoring_nodes = ["172.31.13.185/32"]
+dns_domain = "deepdivers.xyz"
 
 
 ## VPC Modules to create public and private subnets multiple availability zones
