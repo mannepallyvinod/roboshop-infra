@@ -107,7 +107,6 @@ module "app" {
  env    = var.env
  tags   = var.tags
  bastion_cidr = var.bastion_cidr
- monitoring_nodes = var.monitoring_nodes
  dns_domain   = var.dns_domain
 
  vpc_id             = module.vpc["main"].vpc_id
@@ -205,15 +204,15 @@ output "elb" {
 # }
 
 
-module "eks" {
-  source             = "github.com/r-devops/tf-module-eks"
-  ENV                = var.env
-  PRIVATE_SUBNET_IDS = lookup(local.subnet_ids, "app", null)
-  PUBLIC_SUBNET_IDS  = lookup(local.subnet_ids, "public", null)
-  DESIRED_SIZE       = 2
-  MAX_SIZE           = 2
-  MIN_SIZE           = 2
-}
+#module "eks" {
+#  source             = "github.com/r-devops/tf-module-eks"
+#  ENV                = var.env
+#  PRIVATE_SUBNET_IDS = lookup(local.subnet_ids, "app", null)
+#  PUBLIC_SUBNET_IDS  = lookup(local.subnet_ids, "public", null)
+#  DESIRED_SIZE       = 2
+#  MAX_SIZE           = 2
+#  MIN_SIZE           = 2
+#}
 
 
 
