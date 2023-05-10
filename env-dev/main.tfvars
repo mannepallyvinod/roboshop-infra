@@ -1,5 +1,5 @@
 env = "dev"
-bastion_cidr = ["172.31.95.162/32"]
+bastion_cidr = ["172.31.81.29/32"]
 
 dns_domain = "deepdivers.xyz"
 
